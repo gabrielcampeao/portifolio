@@ -24,7 +24,7 @@ export function ContactSection() {
   const serviceId = import.meta.env.VITE_SERVICE_ID
   const templateId = import.meta.env.VITE_TEMPLATE_ID
   const publicKey = import.meta.env.VITE_PUBLIC_KEY
-  const captchaSiteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY
+  
 
   const handleChange = (e) =>
     setForm((prev) => ({ ...prev, [e.target.id]: e.target.value }))
@@ -206,13 +206,6 @@ export function ContactSection() {
               </div>
 
             {/* CAPTCHA */}
-
-            <div className='sm:col-span-2'>
-              <ReCAPTCHA
-                sitekey={captchaSiteKey}
-                onChange={(value) => setCaptcha(value)}
-              />
-            </div>
 
               <div className="flex flex-col gap-3 sm:col-span-2 sm:flex-row sm:items-center sm:justify-between">
                 <p className="max-w-xs text-[0.7rem] leading-relaxed text-muted-foreground">
