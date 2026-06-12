@@ -1,4 +1,4 @@
-import helpdesk from '../assets/HelpDeskPrint.png'
+import helpdesk from '../assets/HelpDeskPrint1.png'
 
 
 export const projects = [
