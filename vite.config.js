@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: "/Portfolio/",
+  base: "https://github.com/gabrielcampeao/Portifolio",
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
