@@ -24,10 +24,7 @@ export const projects = [
     ],
     highlights: [
     'Autenticação com JWT em cookie HTTP-only e controle de acesso baseado em perfis de usuário',
-    'Upload de foto de perfil via Supabase Storage, com deploy contínuo na Vercel',
     'Quer testar a aplicação online? Use uma das contas de demonstração abaixo:',
-    'Usuário comum — E-mail: user-comum@gmail.com · Senha: UserCom.123',
-    'Usuário de suporte — E-mail: user-suporte@gmail.com · Senha: UserSup.123',
     ],
   },
   
