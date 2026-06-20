@@ -23,11 +23,11 @@ export const projects = [
       { label: 'Ano', value: '2026' },
     ],
     highlights: [
-      'Autenticação real com JWT em cookie HTTP-only e controle de acesso por perfis de usuário',
-      'Upload de foto de perfil com Supabase Storage e aplicação preparada para deploy na Vercel',
-      'Logins - Caso queira explorar a aplicação online:',
-      'Usuário comum: E-mail - user-comum@gmail.com | Senha - UserCom.123',
-      'Usuário de suporte: E-mail - user-suporte@gmail.com | Senha - UserSup.123',
+    'Autenticação com JWT em cookie HTTP-only e controle de acesso baseado em perfis de usuário',
+    'Upload de foto de perfil via Supabase Storage, com deploy contínuo na Vercel',
+    'Quer testar a aplicação online? Use uma das contas de demonstração abaixo:',
+    'Usuário comum — E-mail: user-comum@gmail.com · Senha: UserCom.123',
+    'Usuário de suporte — E-mail: user-suporte@gmail.com · Senha: UserSup.123',
     ],
   },
   
