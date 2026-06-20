@@ -10,8 +10,8 @@ export const projects = [
     tags: ['Next.js', 'Prisma', 'Supabase'],
     preview: helpdesk,
     previewPosition: 'object-top',
-    githubURL: '',
-    liveURL: '',
+    githubURL: 'https://github.com/gabrielcampeao/Help',
+    liveURL: 'https://help-sepia-ten.vercel.app/tickets',
     summary:
       'Sistema full-stack de help desk para gerenciamento de chamados internos, usuários e fluxo de atendimento, com autenticação real, controle de acesso por perfil e deploy online.',
     description:
