@@ -62,7 +62,7 @@ export const learningTimeline = [
 ]
 
 export const clients = [
-  'Help Desk Nexus System',
+  'Help Desk System',
   '',
   ''
 ]
