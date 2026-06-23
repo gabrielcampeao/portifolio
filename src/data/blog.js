@@ -174,4 +174,244 @@ Aprender Spring Boot não é só criar endpoints.
 com o passar do tempo.
 `.trim(),
   },
+  {
+  slug: 'guia-estudos-mongodb',
+  title: 'Guia de Estudos MongoDB',
+  date: 'Jun 22, 2026',
+  category: 'Banco de Dados',
+  excerpt:
+    'Aprenda os fundamentos do MongoDB, incluindo CRUD, operadores, índices e gerenciamento de coleções.',
+  readTime: '15 min read',
+  content: `
+
+# Introdução
+
+MongoDB é um banco de dados NoSQL orientado a documentos que armazena informações em formato BSON, semelhante ao JSON.
+
+## Acessando o MongoDB
+
+flatpak-spawn --host bash
+
+Abre um terminal do sistema host.
+
+which mongosh
+
+Verifica onde o MongoDB Shell está instalado.
+
+mongosh
+
+Inicia o shell do MongoDB.
+
+cls
+
+Limpa a tela.
+
+## Bancos de Dados
+
+show dbs
+
+Lista todos os bancos de dados.
+
+use schol
+
+Seleciona ou cria o banco schol.
+
+db.dropDatabase()
+
+Remove o banco atual.
+
+## Criando Coleções
+
+db.createCollection("students")
+
+Cria a coleção students.
+
+show collections
+
+Lista todas as coleções.
+
+## Inserindo Documentos
+
+db.students.insertOne({name:"Spongebob", age:30, gpa:3.2})
+
+Insere um documento.
+
+db.students.insertMany([...])
+
+Insere vários documentos de uma vez.
+
+db.students.find()
+
+Exibe todos os documentos da coleção.
+
+## Tipos de Dados
+
+MongoDB suporta:
+
+- String
+- Number
+- Boolean
+- Date
+- Null
+- Array
+- Object
+
+Exemplo:
+
+name → String
+
+age → Number
+
+fullTime → Boolean
+
+registerDate → Date
+
+graduationDate → Null
+
+courses → Array
+
+address → Object
+
+## Ordenação e Limitação
+
+db.students.find().sort({name:-1})
+
+Ordena por nome em ordem decrescente.
+
+db.students.find().sort({gpa:1})
+
+Ordena GPA crescente.
+
+db.students.find().sort({gpa:-1})
+
+Ordena GPA decrescente.
+
+db.students.find().limit(1)
+
+Retorna apenas um documento.
+
+db.students.find().sort({gpa:-1}).limit(1)
+
+Retorna o maior GPA.
+
+## Consultas
+
+db.students.find({name:"Patrick"})
+
+Busca por nome.
+
+db.students.find({fullTime:false})
+
+Busca alunos em período parcial.
+
+db.students.find({gpa:4.0, fullTime:true})
+
+Busca usando múltiplas condições.
+
+## Projeções
+
+db.students.find({}, {name:true})
+
+Mostra apenas o campo name.
+
+db.students.find({}, {_id:false, name:true})
+
+Oculta o _id.
+
+db.students.find({}, {_id:false, name:true, gpa:true})
+
+Mostra apenas name e gpa.
+
+## Atualização
+
+db.students.updateOne({name:"Sandy"}, {$set:{fullTime:true}})
+
+Atualiza um documento.
+
+db.students.updateMany({}, {$set:{fullTime:false}})
+
+Atualiza vários documentos.
+
+db.students.updateOne({name:"Gary"}, {$unset:{fullTime:""}})
+
+Remove um campo.
+
+## Exclusão
+
+db.students.deleteOne({name:"Larry"})
+
+Remove um documento.
+
+db.students.deleteMany({fullTime:false})
+
+Remove vários documentos.
+
+## Operadores de Comparação
+
+$ne → Diferente
+
+$lt → Menor que
+
+$lte → Menor ou igual
+
+$gt → Maior que
+
+$gte → Maior ou igual
+
+$in → Dentro de uma lista
+
+$nin → Fora de uma lista
+
+## Operadores Lógicos
+
+$and
+
+Todas as condições devem ser verdadeiras.
+
+$or
+
+Pelo menos uma condição deve ser verdadeira.
+
+$nor
+
+Nenhuma condição pode ser verdadeira.
+
+$not
+
+Inverte a condição informada.
+
+## Índices
+
+db.students.createIndex({name:-1})
+
+Cria índice para acelerar buscas.
+
+db.students.getIndexes()
+
+Lista índices existentes.
+
+db.students.dropIndex("name_-1")
+
+Remove um índice.
+
+## Gerenciamento de Coleções
+
+db.createCollection("teacher",{capped:true,size:1000000,max:100})
+
+Cria uma coleção capped.
+
+db.createCollection("courses")
+
+Cria uma coleção comum.
+
+db.courses.drop()
+
+Remove a coleção.
+
+## Resumo
+
+MongoDB utiliza documentos em formato BSON e fornece recursos para inserção, consulta, atualização, exclusão e indexação de dados de forma eficiente.
+
+`,trim(),
+  },
 ]
