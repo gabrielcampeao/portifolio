@@ -496,6 +496,8 @@ Remove vários documentos.
 | $in | Dentro de uma lista |
 | $nin | Fora de uma lista |
 
+
+
 **Operadores Lógicos**
 
 | Operador | Função |
