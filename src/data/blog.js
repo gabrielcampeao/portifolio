@@ -173,7 +173,7 @@ Aprender Spring Boot não é só criar endpoints.
 
 com o passar do tempo.
 `.trim(),
- ```js
+  },
 {
   slug: 'guia-estudos-mongodb',
   title: 'Guia de Estudos MongoDB',
@@ -567,4 +567,4 @@ MongoDB é um banco de dados NoSQL flexível e orientado a documentos. Com ele �
 
 `.trim(),
   },
-]
+];
