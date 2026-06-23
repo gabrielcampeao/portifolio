@@ -184,231 +184,135 @@ com o passar do tempo.
   readTime: '15 min read',
   content: `
 
-# Introdução
+Introdução
 
 MongoDB é um banco de dados NoSQL orientado a documentos que armazena informações em formato BSON, semelhante ao JSON.
 
-## Acessando o MongoDB
+Acessando o MongoDB
 
-flatpak-spawn --host bash
+flatpak-spawn --host bash → Abre um terminal do sistema host.
 
-Abre um terminal do sistema host.
+which mongosh → Verifica onde o MongoDB Shell está instalado.
 
-which mongosh
+mongosh → Inicia o shell do MongoDB.
 
-Verifica onde o MongoDB Shell está instalado.
+cls → Limpa a tela.
 
-mongosh
+Bancos de Dados
 
-Inicia o shell do MongoDB.
+show dbs → Lista todos os bancos de dados.
 
-cls
+use schol → Seleciona ou cria o banco schol.
 
-Limpa a tela.
+db.dropDatabase() → Remove o banco atual.
 
-## Bancos de Dados
+Criando Coleções
 
-show dbs
+db.createCollection("students") → Cria a coleção students.
 
-Lista todos os bancos de dados.
+show collections → Lista todas as coleções.
 
-use schol
+Inserindo Documentos
 
-Seleciona ou cria o banco schol.
+db.students.insertOne({name:"Spongebob", age:30, gpa:3.2}) → Insere um documento.
 
-db.dropDatabase()
+db.students.insertMany([...]) → Insere vários documentos de uma vez.
 
-Remove o banco atual.
+db.students.find() → Exibe todos os documentos da coleção.
 
-## Criando Coleções
+Tipos de Dados
+String → Texto.
+Number → Valores numéricos.
+Boolean → true ou false.
+Date → Datas.
+Null → Valor nulo.
+Array → Lista de valores.
+Object → Documento aninhado.
+Ordenação e Limitação
 
-db.createCollection("students")
+db.students.find().sort({name:-1}) → Ordena por nome em ordem decrescente.
 
-Cria a coleção students.
+db.students.find().sort({gpa:1}) → Ordena GPA crescente.
 
-show collections
+db.students.find().sort({gpa:-1}) → Ordena GPA decrescente.
 
-Lista todas as coleções.
+db.students.find().limit(1) → Retorna apenas um documento.
 
-## Inserindo Documentos
+db.students.find().sort({gpa:-1}).limit(1) → Retorna o aluno com maior GPA.
 
-db.students.insertOne({name:"Spongebob", age:30, gpa:3.2})
+Consultas
 
-Insere um documento.
+db.students.find({name:"Patrick"}) → Busca por nome.
 
-db.students.insertMany([...])
+db.students.find({fullTime}) → Busca alunos em período parcial.
 
-Insere vários documentos de uma vez.
+db.students.find({gpa:4.0, fullTime}) → Busca usando múltiplas condições.
 
-db.students.find()
+Projeções
 
-Exibe todos os documentos da coleção.
+db.students.find({}, {name}) → Mostra apenas o campo name.
 
-## Tipos de Dados
+db.students.find({}, {_id, name}) → Oculta o _id.
 
-MongoDB suporta:
+db.students.find({}, {_id, name, gpa}) → Mostra apenas name e gpa.
 
-- String
-- Number
-- Boolean
-- Date
-- Null
-- Array
-- Object
+Atualização
 
-Exemplo:
+db.students.updateOne({name:"Sandy"}, {$set:{fullTime}}) → Atualiza um documento.
 
-name → String
+db.students.updateMany({}, {$set:{fullTime}}) → Atualiza vários documentos.
 
-age → Number
+db.students.updateOne({name:"Gary"}, {$unset:{fullTime:""}}) → Remove um campo.
 
-fullTime → Boolean
+Exclusão
 
-registerDate → Date
+db.students.deleteOne({name:"Larry"}) → Remove um documento.
 
-graduationDate → Null
+db.students.deleteMany({fullTime}) → Remove vários documentos.
 
-courses → Array
+Operadores de Comparação
 
-address → Object
+$ne → Diferente.
 
-## Ordenação e Limitação
+$lt → Menor que.
 
-db.students.find().sort({name:-1})
+$lte → Menor ou igual.
 
-Ordena por nome em ordem decrescente.
+$gt → Maior que.
 
-db.students.find().sort({gpa:1})
+$gte → Maior ou igual.
 
-Ordena GPA crescente.
+$in → Dentro de uma lista.
 
-db.students.find().sort({gpa:-1})
+$nin → Fora de uma lista.
 
-Ordena GPA decrescente.
+Operadores Lógicos
 
-db.students.find().limit(1)
+$and → Todas as condições devem ser verdadeiras.
 
-Retorna apenas um documento.
+$or → Pelo menos uma condição deve ser verdadeira.
 
-db.students.find().sort({gpa:-1}).limit(1)
+$nor → Nenhuma condição pode ser verdadeira.
 
-Retorna o maior GPA.
+$not → Inverte a condição informada.
 
-## Consultas
+Índices
 
-db.students.find({name:"Patrick"})
+db.students.createIndex({name:-1}) → Cria índice para acelerar buscas.
 
-Busca por nome.
+db.students.getIndexes() → Lista índices existentes.
 
-db.students.find({fullTime:false})
+db.students.dropIndex("name_-1") → Remove um índice.
 
-Busca alunos em período parcial.
+Gerenciamento de Coleções
 
-db.students.find({gpa:4.0, fullTime:true})
+db.createCollection("teacher",{capped,size:1000000,max:100}) → Cria uma coleção capped.
 
-Busca usando múltiplas condições.
+db.createCollection("courses") → Cria uma coleção comum.
 
-## Projeções
+db.courses.drop() → Remove a coleção.
 
-db.students.find({}, {name:true})
-
-Mostra apenas o campo name.
-
-db.students.find({}, {_id:false, name:true})
-
-Oculta o _id.
-
-db.students.find({}, {_id:false, name:true, gpa:true})
-
-Mostra apenas name e gpa.
-
-## Atualização
-
-db.students.updateOne({name:"Sandy"}, {$set:{fullTime:true}})
-
-Atualiza um documento.
-
-db.students.updateMany({}, {$set:{fullTime:false}})
-
-Atualiza vários documentos.
-
-db.students.updateOne({name:"Gary"}, {$unset:{fullTime:""}})
-
-Remove um campo.
-
-## Exclusão
-
-db.students.deleteOne({name:"Larry"})
-
-Remove um documento.
-
-db.students.deleteMany({fullTime:false})
-
-Remove vários documentos.
-
-## Operadores de Comparação
-
-$ne → Diferente
-
-$lt → Menor que
-
-$lte → Menor ou igual
-
-$gt → Maior que
-
-$gte → Maior ou igual
-
-$in → Dentro de uma lista
-
-$nin → Fora de uma lista
-
-## Operadores Lógicos
-
-$and
-
-Todas as condições devem ser verdadeiras.
-
-$or
-
-Pelo menos uma condição deve ser verdadeira.
-
-$nor
-
-Nenhuma condição pode ser verdadeira.
-
-$not
-
-Inverte a condição informada.
-
-## Índices
-
-db.students.createIndex({name:-1})
-
-Cria índice para acelerar buscas.
-
-db.students.getIndexes()
-
-Lista índices existentes.
-
-db.students.dropIndex("name_-1")
-
-Remove um índice.
-
-## Gerenciamento de Coleções
-
-db.createCollection("teacher",{capped:true,size:1000000,max:100})
-
-Cria uma coleção capped.
-
-db.createCollection("courses")
-
-Cria uma coleção comum.
-
-db.courses.drop()
-
-Remove a coleção.
-
-## Resumo
+Resumo
 
 MongoDB utiliza documentos em formato BSON e fornece recursos para inserção, consulta, atualização, exclusão e indexação de dados de forma eficiente.
 
