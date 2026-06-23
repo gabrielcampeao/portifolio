@@ -173,379 +173,398 @@ Aprender Spring Boot não é só criar endpoints.
 
 com o passar do tempo.
 `.trim(),
-  {
-slug: 'guia-estudos-mongodb',
-title: 'Guia de Estudos MongoDB',
-date: 'Jun 22, 2026',
-category: 'Banco de Dados',
-excerpt:
-'Aprenda os fundamentos do MongoDB, incluindo CRUD, operadores, índices e gerenciamento de coleções.',
-readTime: '15 min read',
-content: `
+ ```js
+{
+  slug: 'guia-estudos-mongodb',
+  title: 'Guia de Estudos MongoDB',
+  date: 'Jun 22, 2026',
+  category: 'Banco de Dados',
+  excerpt:
+    'Aprenda os fundamentos do MongoDB, incluindo CRUD, operadores, índices e gerenciamento de coleções.',
+  readTime: '15 min read',
+  content: `
 
-Introdução
+**Introdução**
 
 MongoDB é um banco de dados NoSQL orientado a documentos que armazena informações em formato BSON, semelhante ao JSON.
 
-Acessando o MongoDB
-Abrir terminal do host
+**Acessando o MongoDB**
 
-```bash
+**Abrir terminal do host**
+
+\`\`\`bash
 flatpak-spawn --host bash
-```
+\`\`\`
 
 Abre um terminal do sistema host.
 
-Verificar instalação do MongoDB Shell
+**Verificar instalação do MongoDB Shell**
 
-```bash
+\`\`\`bash
 which mongosh
-```
+\`\`\`
 
 Verifica onde o MongoDB Shell está instalado.
 
-Iniciar MongoDB Shell
+**Iniciar MongoDB Shell**
 
-```bash
+\`\`\`bash
 mongosh
-```
+\`\`\`
 
 Inicia o shell do MongoDB.
 
-Limpar terminal
+**Limpar terminal**
 
-```bash
+\`\`\`bash
 cls
-```
+\`\`\`
 
 Limpa a tela.
 
-Bancos de Dados
-Listar bancos existentes
+**Bancos de Dados**
 
-```javascript
+**Listar bancos existentes**
+
+\`\`\`mongodb
 show dbs
-```
+\`\`\`
 
 Lista todos os bancos de dados disponíveis.
 
-Selecionar ou criar banco
+**Selecionar ou criar banco**
 
-```javascript
+\`\`\`mongodb
 use schol
-```
+\`\`\`
 
 Seleciona ou cria o banco de dados chamado schol.
 
-Excluir banco atual
+**Excluir banco atual**
 
-```javascript
+\`\`\`mongodb
 db.dropDatabase()
-```
+\`\`\`
 
 Remove o banco de dados atualmente selecionado.
 
-Coleções
-Criar coleção
+**Coleções**
 
-```javascript
+**Criar coleção**
+
+\`\`\`mongodb
 db.createCollection("students")
-```
+\`\`\`
 
 Cria a coleção students.
 
-Listar coleções
+**Listar coleções**
 
-```javascript
+\`\`\`mongodb
 show collections
-```
+\`\`\`
 
 Exibe todas as coleções do banco atual.
 
-Inserindo Dados
-Inserir um documento
+**Inserindo Dados**
 
-```javascript
+**Inserir um documento**
+
+\`\`\`mongodb
 db.students.insertOne({
-name: "Spongebob",
-age: 30,
-gpa: 3.2
+  name: "Spongebob",
+  age: 30,
+  gpa: 3.2
 })
-```
+\`\`\`
 
 Insere um único documento na coleção.
 
-Inserir vários documentos
+**Inserir vários documentos**
 
-```javascript
+\`\`\`mongodb
 db.students.insertMany([
-{ name: "Patrick", age: 38, gpa: 1.5 },
-{ name: "Sandy", age: 27, gpa: 4.0 },
-{ name: "Gary", age: 18, gpa: 2.5 }
+  { name: "Patrick", age: 38, gpa: 1.5 },
+  { name: "Sandy", age: 27, gpa: 4.0 },
+  { name: "Gary", age: 18, gpa: 2.5 }
 ])
-```
+\`\`\`
 
 Insere vários documentos de uma só vez.
 
-Visualizar documentos
+**Visualizar documentos**
 
-```javascript
+\`\`\`mongodb
 db.students.find()
-```
+\`\`\`
 
 Exibe todos os documentos da coleção.
 
-Tipos de Dados
+**Tipos de Dados**
 
 MongoDB suporta diversos tipos de dados:
 
-String
-Number
-Boolean
-Date
-Null
-Array
-Object
-Exemplo completo
+- String
+- Number
+- Boolean
+- Date
+- Null
+- Array
+- Object
 
-```javascript
+**Exemplo completo**
+
+\`\`\`mongodb
 db.students.insertOne({
-name: "Larry123",
-age: 32,
-gpa: 2.8,
-fullTime: false,
-registerDate: {
-"$date": "2023-01-02T03:00:00.000Z"
-},
-graduationDate: null,
-courses: [
-"Biology",
-"Chemistry",
-"Calculus"
-],
-address: {
-street: "123 fake st.",
-city: "Bikini Bot",
-zip: 1234
-}
+  name: "Larry123",
+  age: 32,
+  gpa: 2.8,
+  fullTime: false,
+  registerDate: {
+    "$date": "2023-01-02T03:00:00.000Z"
+  },
+  graduationDate: null,
+  courses: [
+    "Biology",
+    "Chemistry",
+    "Calculus"
+  ],
+  address: {
+    street: "123 fake st.",
+    city: "Bikini Bot",
+    zip: 1234
+  }
 })
-```
+\`\`\`
 
-Ordenação e Limitação
-Ordenar por nome
+**Ordenação e Limitação**
 
-```javascript
+**Ordenar por nome**
+
+\`\`\`mongodb
 db.students.find().sort({name:-1})
-```
+\`\`\`
 
 Ordena os resultados por nome em ordem decrescente.
 
-Ordenar GPA crescente
+**Ordenar GPA crescente**
 
-```javascript
+\`\`\`mongodb
 db.students.find().sort({gpa:1})
-```
+\`\`\`
 
 Ordena os resultados por GPA crescente.
 
-Ordenar GPA decrescente
+**Ordenar GPA decrescente**
 
-```javascript
+\`\`\`mongodb
 db.students.find().sort({gpa:-1})
-```
+\`\`\`
 
 Ordena os resultados por GPA decrescente.
 
-Limitar resultados
+**Limitar resultados**
 
-```javascript
+\`\`\`mongodb
 db.students.find().limit(1)
-```
+\`\`\`
 
 Retorna apenas um documento.
 
-Retornar maior GPA
+**Retornar maior GPA**
 
-```javascript
+\`\`\`mongodb
 db.students.find().sort({gpa:-1}).limit(1)
-```
+\`\`\`
 
 Retorna o aluno com maior GPA.
 
-Consultas
-Buscar por nome
+**Consultas**
 
-```javascript
+**Buscar por nome**
+
+\`\`\`mongodb
 db.students.find({name:"Patrick"})
-```
+\`\`\`
 
 Busca documentos pelo nome.
 
-Buscar por período parcial
+**Buscar por período parcial**
 
-```javascript
-db.students.find({fullTime})
-```
+\`\`\`mongodb
+db.students.find({fullTime:false})
+\`\`\`
 
 Retorna alunos com fullTime igual a false.
 
-Buscar múltiplas condições
+**Buscar múltiplas condições**
 
-```javascript
-db.students.find({gpa:4.0, fullTime})
-```
+\`\`\`mongodb
+db.students.find({gpa:4.0, fullTime:true})
+\`\`\`
 
 Busca alunos com GPA 4.0 e fullTime true.
 
-Projeções
-Exibir apenas nome
+**Projeções**
 
-```javascript
-db.students.find({}, {name})
-```
+**Exibir apenas nome**
+
+\`\`\`mongodb
+db.students.find({}, {name:true})
+\`\`\`
 
 Mostra apenas o campo name.
 
-Ocultar ID
+**Ocultar ID**
 
-```javascript
-db.students.find({}, {_id, name})
-```
+\`\`\`mongodb
+db.students.find({}, {_id:false, name:true})
+\`\`\`
 
 Oculta o campo _id.
 
-Exibir nome e GPA
+**Exibir nome e GPA**
 
-```javascript
-db.students.find({}, {_id, name, gpa})
-```
+\`\`\`mongodb
+db.students.find({}, {_id:false, name:true, gpa:true})
+\`\`\`
 
 Mostra apenas os campos name e gpa.
 
-Atualização
-Atualizar documento
+**Atualização**
 
-```javascript
+**Atualizar documento**
+
+\`\`\`mongodb
 db.students.updateOne(
-{name:"Sandy"},
-{$set:{fullTime}}
+  {name:"Sandy"},
+  {$set:{fullTime:true}}
 )
-```
+\`\`\`
 
 Atualiza ou cria o campo fullTime.
 
-Atualizar vários documentos
+**Atualizar vários documentos**
 
-```javascript
+\`\`\`mongodb
 db.students.updateMany(
-{},
-{$set:{fullTime}}
+  {},
+  {$set:{fullTime:false}}
 )
-```
+\`\`\`
 
 Atualiza todos os documentos.
 
-Remover campo
+**Remover campo**
 
-```javascript
+\`\`\`mongodb
 db.students.updateOne(
-{name:"Gary"},
-{$unset:{fullTime:""}}
+  {name:"Gary"},
+  {$unset:{fullTime:""}}
 )
-```
+\`\`\`
 
 Remove o campo fullTime.
 
-Exclusão
-Excluir um documento
+**Exclusão**
 
-```javascript
+**Excluir um documento**
+
+\`\`\`mongodb
 db.students.deleteOne({name:"Larry"})
-```
+\`\`\`
 
 Remove um único documento.
 
-Excluir vários documentos
+**Excluir vários documentos**
 
-```javascript
-db.students.deleteMany({fullTime})
-```
+\`\`\`mongodb
+db.students.deleteMany({fullTime:false})
+\`\`\`
 
 Remove vários documentos.
 
-Operadores de Comparação
-Operador	Função
-$ne	Diferente de
-$lt	Menor que
-$lte	Menor ou igual
-$gt	Maior que
-$gte	Maior ou igual
-$in	Dentro de uma lista
-$nin	Fora de uma lista
-Operadores Lógicos
-Operador	Função
-$and	Todas as condições devem ser verdadeiras
-$or	Pelo menos uma condição deve ser verdadeira
-$nor	Nenhuma condição pode ser verdadeira
-$not	Inverte uma condição
-Índices
-Criar índice
+**Operadores de Comparação**
 
-```javascript
+| Operador | Função |
+|-----------|---------|
+| $ne | Diferente de |
+| $lt | Menor que |
+| $lte | Menor ou igual |
+| $gt | Maior que |
+| $gte | Maior ou igual |
+| $in | Dentro de uma lista |
+| $nin | Fora de uma lista |
+
+**Operadores Lógicos**
+
+| Operador | Função |
+|-----------|---------|
+| $and | Todas as condições devem ser verdadeiras |
+| $or | Pelo menos uma condição deve ser verdadeira |
+| $nor | Nenhuma condição pode ser verdadeira |
+| $not | Inverte uma condição |
+
+**Índices**
+
+**Criar índice**
+
+\`\`\`mongodb
 db.students.createIndex({name:-1})
-```
+\`\`\`
 
 Cria um índice para acelerar buscas.
 
-Listar índices
+**Listar índices**
 
-```javascript
+\`\`\`mongodb
 db.students.getIndexes()
-```
+\`\`\`
 
 Mostra todos os índices da coleção.
 
-Remover índice
+**Remover índice**
 
-```javascript
+\`\`\`mongodb
 db.students.dropIndex("name_-1")
-```
+\`\`\`
 
 Remove o índice especificado.
 
-Gerenciamento de Coleções
-Criar coleção capped
+**Gerenciamento de Coleções**
 
-```javascript
+**Criar coleção capped**
+
+\`\`\`mongodb
 db.createCollection("teacher",{
-capped,
-size:1000000,
-max:100
+  capped:true,
+  size:1000000,
+  max:100
 })
-```
+\`\`\`
 
 Cria uma coleção limitada por tamanho.
 
-Criar coleção comum
+**Criar coleção comum**
 
-```javascript
+\`\`\`mongodb
 db.createCollection("courses")
-```
+\`\`\`
 
 Cria a coleção courses.
 
-Excluir coleção
+**Excluir coleção**
 
-```javascript
+\`\`\`mongodb
 db.courses.drop()
-```
+\`\`\`
 
 Remove a coleção courses.
 
-Resumo
+**Resumo**
 
 MongoDB é um banco de dados NoSQL flexível e orientado a documentos. Com ele é possível realizar operações CRUD, utilizar operadores avançados, criar índices para melhorar desempenho e gerenciar coleções de forma simples e eficiente.
 
 `.trim(),
 },
-]
+
