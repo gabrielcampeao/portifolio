@@ -173,149 +173,379 @@ Aprender Spring Boot não é só criar endpoints.
 
 com o passar do tempo.
 `.trim(),
-  },
   {
-  slug: 'guia-estudos-mongodb',
-  title: 'Guia de Estudos MongoDB',
-  date: 'Jun 22, 2026',
-  category: 'Banco de Dados',
-  excerpt:
-    'Aprenda os fundamentos do MongoDB, incluindo CRUD, operadores, índices e gerenciamento de coleções.',
-  readTime: '15 min read',
-  content: `
+slug: 'guia-estudos-mongodb',
+title: 'Guia de Estudos MongoDB',
+date: 'Jun 22, 2026',
+category: 'Banco de Dados',
+excerpt:
+'Aprenda os fundamentos do MongoDB, incluindo CRUD, operadores, índices e gerenciamento de coleções.',
+readTime: '15 min read',
+content: `
 
 Introdução
 
 MongoDB é um banco de dados NoSQL orientado a documentos que armazena informações em formato BSON, semelhante ao JSON.
 
 Acessando o MongoDB
+Abrir terminal do host
 
-flatpak-spawn --host bash → Abre um terminal do sistema host.
+```bash
+flatpak-spawn --host bash
+```
 
-which mongosh → Verifica onde o MongoDB Shell está instalado.
+Abre um terminal do sistema host.
 
-mongosh → Inicia o shell do MongoDB.
+Verificar instalação do MongoDB Shell
 
-cls → Limpa a tela.
+```bash
+which mongosh
+```
+
+Verifica onde o MongoDB Shell está instalado.
+
+Iniciar MongoDB Shell
+
+```bash
+mongosh
+```
+
+Inicia o shell do MongoDB.
+
+Limpar terminal
+
+```bash
+cls
+```
+
+Limpa a tela.
 
 Bancos de Dados
+Listar bancos existentes
 
-show dbs → Lista todos os bancos de dados.
+```javascript
+show dbs
+```
 
-use schol → Seleciona ou cria o banco schol.
+Lista todos os bancos de dados disponíveis.
 
-db.dropDatabase() → Remove o banco atual.
+Selecionar ou criar banco
 
-Criando Coleções
+```javascript
+use schol
+```
 
-db.createCollection("students") → Cria a coleção students.
+Seleciona ou cria o banco de dados chamado schol.
 
-show collections → Lista todas as coleções.
+Excluir banco atual
 
-Inserindo Documentos
+```javascript
+db.dropDatabase()
+```
 
-db.students.insertOne({name:"Spongebob", age:30, gpa:3.2}) → Insere um documento.
+Remove o banco de dados atualmente selecionado.
 
-db.students.insertMany([...]) → Insere vários documentos de uma vez.
+Coleções
+Criar coleção
 
-db.students.find() → Exibe todos os documentos da coleção.
+```javascript
+db.createCollection("students")
+```
+
+Cria a coleção students.
+
+Listar coleções
+
+```javascript
+show collections
+```
+
+Exibe todas as coleções do banco atual.
+
+Inserindo Dados
+Inserir um documento
+
+```javascript
+db.students.insertOne({
+name: "Spongebob",
+age: 30,
+gpa: 3.2
+})
+```
+
+Insere um único documento na coleção.
+
+Inserir vários documentos
+
+```javascript
+db.students.insertMany([
+{ name: "Patrick", age: 38, gpa: 1.5 },
+{ name: "Sandy", age: 27, gpa: 4.0 },
+{ name: "Gary", age: 18, gpa: 2.5 }
+])
+```
+
+Insere vários documentos de uma só vez.
+
+Visualizar documentos
+
+```javascript
+db.students.find()
+```
+
+Exibe todos os documentos da coleção.
 
 Tipos de Dados
-String → Texto.
-Number → Valores numéricos.
-Boolean → true ou false.
-Date → Datas.
-Null → Valor nulo.
-Array → Lista de valores.
-Object → Documento aninhado.
+
+MongoDB suporta diversos tipos de dados:
+
+String
+Number
+Boolean
+Date
+Null
+Array
+Object
+Exemplo completo
+
+```javascript
+db.students.insertOne({
+name: "Larry123",
+age: 32,
+gpa: 2.8,
+fullTime: false,
+registerDate: {
+"$date": "2023-01-02T03:00:00.000Z"
+},
+graduationDate: null,
+courses: [
+"Biology",
+"Chemistry",
+"Calculus"
+],
+address: {
+street: "123 fake st.",
+city: "Bikini Bot",
+zip: 1234
+}
+})
+```
+
 Ordenação e Limitação
+Ordenar por nome
 
-db.students.find().sort({name:-1}) → Ordena por nome em ordem decrescente.
+```javascript
+db.students.find().sort({name:-1})
+```
 
-db.students.find().sort({gpa:1}) → Ordena GPA crescente.
+Ordena os resultados por nome em ordem decrescente.
 
-db.students.find().sort({gpa:-1}) → Ordena GPA decrescente.
+Ordenar GPA crescente
 
-db.students.find().limit(1) → Retorna apenas um documento.
+```javascript
+db.students.find().sort({gpa:1})
+```
 
-db.students.find().sort({gpa:-1}).limit(1) → Retorna o aluno com maior GPA.
+Ordena os resultados por GPA crescente.
+
+Ordenar GPA decrescente
+
+```javascript
+db.students.find().sort({gpa:-1})
+```
+
+Ordena os resultados por GPA decrescente.
+
+Limitar resultados
+
+```javascript
+db.students.find().limit(1)
+```
+
+Retorna apenas um documento.
+
+Retornar maior GPA
+
+```javascript
+db.students.find().sort({gpa:-1}).limit(1)
+```
+
+Retorna o aluno com maior GPA.
 
 Consultas
+Buscar por nome
 
-db.students.find({name:"Patrick"}) → Busca por nome.
+```javascript
+db.students.find({name:"Patrick"})
+```
 
-db.students.find({fullTime}) → Busca alunos em período parcial.
+Busca documentos pelo nome.
 
-db.students.find({gpa:4.0, fullTime}) → Busca usando múltiplas condições.
+Buscar por período parcial
+
+```javascript
+db.students.find({fullTime})
+```
+
+Retorna alunos com fullTime igual a false.
+
+Buscar múltiplas condições
+
+```javascript
+db.students.find({gpa:4.0, fullTime})
+```
+
+Busca alunos com GPA 4.0 e fullTime true.
 
 Projeções
+Exibir apenas nome
 
-db.students.find({}, {name}) → Mostra apenas o campo name.
+```javascript
+db.students.find({}, {name})
+```
 
-db.students.find({}, {_id, name}) → Oculta o _id.
+Mostra apenas o campo name.
 
-db.students.find({}, {_id, name, gpa}) → Mostra apenas name e gpa.
+Ocultar ID
+
+```javascript
+db.students.find({}, {_id, name})
+```
+
+Oculta o campo _id.
+
+Exibir nome e GPA
+
+```javascript
+db.students.find({}, {_id, name, gpa})
+```
+
+Mostra apenas os campos name e gpa.
 
 Atualização
+Atualizar documento
 
-db.students.updateOne({name:"Sandy"}, {$set:{fullTime}}) → Atualiza um documento.
+```javascript
+db.students.updateOne(
+{name:"Sandy"},
+{$set:{fullTime}}
+)
+```
 
-db.students.updateMany({}, {$set:{fullTime}}) → Atualiza vários documentos.
+Atualiza ou cria o campo fullTime.
 
-db.students.updateOne({name:"Gary"}, {$unset:{fullTime:""}}) → Remove um campo.
+Atualizar vários documentos
+
+```javascript
+db.students.updateMany(
+{},
+{$set:{fullTime}}
+)
+```
+
+Atualiza todos os documentos.
+
+Remover campo
+
+```javascript
+db.students.updateOne(
+{name:"Gary"},
+{$unset:{fullTime:""}}
+)
+```
+
+Remove o campo fullTime.
 
 Exclusão
+Excluir um documento
 
-db.students.deleteOne({name:"Larry"}) → Remove um documento.
+```javascript
+db.students.deleteOne({name:"Larry"})
+```
 
-db.students.deleteMany({fullTime}) → Remove vários documentos.
+Remove um único documento.
+
+Excluir vários documentos
+
+```javascript
+db.students.deleteMany({fullTime})
+```
+
+Remove vários documentos.
 
 Operadores de Comparação
-
-$ne → Diferente.
-
-$lt → Menor que.
-
-$lte → Menor ou igual.
-
-$gt → Maior que.
-
-$gte → Maior ou igual.
-
-$in → Dentro de uma lista.
-
-$nin → Fora de uma lista.
-
+Operador	Função
+$ne	Diferente de
+$lt	Menor que
+$lte	Menor ou igual
+$gt	Maior que
+$gte	Maior ou igual
+$in	Dentro de uma lista
+$nin	Fora de uma lista
 Operadores Lógicos
-
-$and → Todas as condições devem ser verdadeiras.
-
-$or → Pelo menos uma condição deve ser verdadeira.
-
-$nor → Nenhuma condição pode ser verdadeira.
-
-$not → Inverte a condição informada.
-
+Operador	Função
+$and	Todas as condições devem ser verdadeiras
+$or	Pelo menos uma condição deve ser verdadeira
+$nor	Nenhuma condição pode ser verdadeira
+$not	Inverte uma condição
 Índices
+Criar índice
 
-db.students.createIndex({name:-1}) → Cria índice para acelerar buscas.
+```javascript
+db.students.createIndex({name:-1})
+```
 
-db.students.getIndexes() → Lista índices existentes.
+Cria um índice para acelerar buscas.
 
-db.students.dropIndex("name_-1") → Remove um índice.
+Listar índices
+
+```javascript
+db.students.getIndexes()
+```
+
+Mostra todos os índices da coleção.
+
+Remover índice
+
+```javascript
+db.students.dropIndex("name_-1")
+```
+
+Remove o índice especificado.
 
 Gerenciamento de Coleções
+Criar coleção capped
 
-db.createCollection("teacher",{capped,size:1000000,max:100}) → Cria uma coleção capped.
+```javascript
+db.createCollection("teacher",{
+capped,
+size:1000000,
+max:100
+})
+```
 
-db.createCollection("courses") → Cria uma coleção comum.
+Cria uma coleção limitada por tamanho.
 
-db.courses.drop() → Remove a coleção.
+Criar coleção comum
+
+```javascript
+db.createCollection("courses")
+```
+
+Cria a coleção courses.
+
+Excluir coleção
+
+```javascript
+db.courses.drop()
+```
+
+Remove a coleção courses.
 
 Resumo
 
-MongoDB utiliza documentos em formato BSON e fornece recursos para inserção, consulta, atualização, exclusão e indexação de dados de forma eficiente.
+MongoDB é um banco de dados NoSQL flexível e orientado a documentos. Com ele é possível realizar operações CRUD, utilizar operadores avançados, criar índices para melhorar desempenho e gerenciar coleções de forma simples e eficiente.
 
 `.trim(),
-  },
+},
 ]
