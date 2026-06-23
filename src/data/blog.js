@@ -412,6 +412,6 @@ Remove a coleção.
 
 MongoDB utiliza documentos em formato BSON e fornece recursos para inserção, consulta, atualização, exclusão e indexação de dados de forma eficiente.
 
-`,trim(),
+`.trim(),
   },
 ]
