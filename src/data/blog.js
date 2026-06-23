@@ -566,5 +566,5 @@ Remove a coleção courses.
 MongoDB é um banco de dados NoSQL flexível e orientado a documentos. Com ele é possível realizar operações CRUD, utilizar operadores avançados, criar índices para melhorar desempenho e gerenciar coleções de forma simples e eficiente.
 
 `.trim(),
-},
-
+  },
+]
