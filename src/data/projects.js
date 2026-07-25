@@ -29,7 +29,7 @@ export const projects = [
   },
   {
     slug: 'stone-gym',
-    title: 'Stone Gym — Site institucional para academia',
+    title: 'Stone Gym',
     role: 'Fullstack',
     year: '2026',
     tags: ['Next.js 14', 'React 18', 'TypeScript', 'Tailwind CSS'],
