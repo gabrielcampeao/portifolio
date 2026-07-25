@@ -38,6 +38,12 @@ export const professionalTimeline = [
     description:
       'Auxiliar do Furriel, responsável pelo controle de arranchamento e apoio administrativo, Destaque da Linha de Fogo do ano pelo desempenho e disciplina.',
   },
+  {
+  number: '04',
+  title: 'Suporte N1/N2 — 2026',
+  description:
+    'Atendimento e resolução de chamados técnicos de nível 1 e 2, com foco em diagnóstico de problemas e suporte ao usuário.',
+  },
 ]
 
 export const learningTimeline = [
@@ -59,10 +65,22 @@ export const learningTimeline = [
     description:
       'Atualmente cursando Engenharia de Software, aprofundando conhecimentos em desenvolvimento e arquitetura de software.',
   },
+  {
+  number: '04',
+  title: 'Algoritmos e Lógica de Programação - O Curso COMPLETO',
+  description:
+    'Curso completo sobre lógica de programação e algoritmos, base fundamental para o desenvolvimento de software.',
+  },
+  {
+  number: '05',
+  title: 'Nivelamento - Formação em Cibersegurança',
+  description:
+    'Módulo de nivelamento da formação em cibersegurança, com fundamentos essenciais para atuação na área de segurança da informação.',
+  },
 ]
 
 export const clients = [
   'Help Desk System',
-  '',
-  ''
+  'Stone Gym',
+  'Temp Email',
 ]
