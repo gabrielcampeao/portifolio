@@ -1,5 +1,5 @@
 import helpdesk from '../assets/HelpDeskPrint1.png'
-
+import stoneGym from '../assets/StoneGymPrint1.png'
 
 export const projects = [
   {
@@ -23,9 +23,33 @@ export const projects = [
       { label: 'Ano', value: '2026' },
     ],
     highlights: [
-    'Autenticação com JWT em cookie HTTP-only e controle de acesso baseado em perfis de usuário',
-    'Quer testar a aplicação online? Use uma das contas de demonstração abaixo:',
+      'Autenticação com JWT em cookie HTTP-only e controle de acesso baseado em perfis de usuário',
+      'Quer testar a aplicação online? Use uma das contas de demonstração abaixo:',
     ],
   },
-  
+  {
+    slug: 'stone-gym',
+    title: 'Stone Gym — Site institucional para academia',
+    role: 'Fullstack',
+    year: '2026',
+    tags: ['Next.js 14', 'React 18', 'TypeScript', 'Tailwind CSS'],
+    preview: stoneGym,
+    previewPosition: 'object-top',
+    githubURL: 'https://github.com/gabrielcampeao/site-gym',
+    liveURL: 'https://site-gym-lilac.vercel.app/',
+    summary:
+      'Site institucional completo de uma academia fitness fictícia, com busca de unidades por geolocalização, catálogo de equipamentos com tutoriais em vídeo e checkout com vouchers.',
+    description:
+      'Site institucional construído em Next.js 14 (App Router) com React 18 e TypeScript, estilizado com Tailwind CSS v3 e paleta escura com acentos roxos. Inclui busca de unidades por geolocalização (cálculo de distância via fórmula de Haversine), catálogo de equipamentos com vídeos tutoriais em embed do YouTube, checkout em duas etapas com cupons de desconto e order bump, formulário de contato com envio real via Nodemailer/Gmail SMTP, e chat de suporte flutuante com respostas automáticas.',
+    details: [
+      { label: 'Tipo', value: 'Site Institucional' },
+      { label: 'Stack', value: 'Next.js 14 + React 18 + TypeScript + Tailwind CSS' },
+      { label: 'Escopo', value: 'Catálogo, checkout, geolocalização e envio de e-mail' },
+      { label: 'Ano', value: '2026' },
+    ],
+    highlights: [
+      'Busca de unidades por geolocalização com cálculo de distância em tempo real (Haversine)',
+      'Checkout em 2 etapas com cupons de desconto, order bump e pagamento por cartão ou Pix',
+    ],
+  },
 ]
