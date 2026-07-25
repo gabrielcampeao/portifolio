@@ -1,5 +1,5 @@
 import helpdesk from '../assets/HelpDeskPrint1.png'
-import stoneGym from '../assets/StoneGymPrint1.png'
+import stoneGym from '../assets/stonegym.png'
 
 export const projects = [
   {
