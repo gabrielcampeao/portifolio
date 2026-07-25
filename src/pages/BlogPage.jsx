@@ -40,9 +40,20 @@ export function BlogPage() {
             className="max-w-xl text-sm leading-relaxed text-muted-foreground text-justify"
           >
             Anotações e aprendizados sobre meu desenvolvimento pessoal
-            como profissinal, a cada dia me qualificando
+            como profissional, a cada dia me qualificando
             e me refinando mais para a área, me especializando
             com foco em aplicações reais e boas práticas.
+          </motion.p>
+          <motion.p
+            variants={fadeUp}
+            transition={baseTransition}
+            className="mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground text-justify"
+          >
+            Recentemente venho me aprofundando em fundamentos de redes
+            (IPv4, IPv6) e cibersegurança, além de reforçar a base de
+            lógica de programação e algoritmos — pilares que sustentam
+            o meu trabalho como desenvolvedor back-end com Node.js,
+            React, TypeScript, NestJS e Next.js.
           </motion.p>
         </div>
       </motion.section>
