@@ -1,4 +1,4 @@
-# Portfólio — Gabriel Campeão
+# Portfólio Gabriel Campeão
 
 > Desenvolvedor focado em criar aplicações web modernas, funcionais e bem estruturadas, com atenção à experiência do usuário e qualidade de código.
 
