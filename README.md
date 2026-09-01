@@ -8,7 +8,7 @@
 
 Este é meu portfólio pessoal, desenvolvido para apresentar meus projetos, evolução como desenvolvedor e habilidades técnicas.
 
-Aqui você vai encontrar aplicações reais construídas durante minha trajetória na faculdade, cursos e estudos independentes — sempre buscando aplicar boas práticas, organização e soluções eficientes.
+Aqui você vai encontrar aplicações reais construídas durante minha trajetória na faculdade, cursos e estudos independentes, sempre buscando aplicar boas práticas, organização e soluções eficientes.
 
 ---
 
