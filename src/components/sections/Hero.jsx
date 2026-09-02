@@ -63,8 +63,9 @@ export function Hero() {
               </span>
             </h1>
             <p className="max-w-xl text-sm leading-relaxed text-foreground text-justify">
-              Sou desenvolvedor focado na criação de sistemas web e aplicações backend,
-              transformando ideias em aplicações funcionais, escaláveis e bem estruturadas.
+              Curto tanto montar telas quanto resolver a lógica por trás delas — desde
+              autenticação até modelagem de banco. No fim, gosto de ver o sistema
+              rodando de verdade, não só no papel.
             </p>
           </motion.div>
 
@@ -144,9 +145,9 @@ export function Hero() {
 
               <div className="flex-1 space-y-4">
                 <p className="max-w-xl text-sm leading-relaxed text-gray-500 text-justify">
-                  Gosto de transformar ideias em sistemas reais,
-                  cuidando tanto da lógica quanto da interface para
-                  entregar algo que funcione bem de verdade.
+                  Trabalhei com logística antes de virar dev, e isso me deixou
+                  meio obcecado por organização — dá pra ver isso no jeito que
+                  estruturo os projetos.
                 </p>
                 <div className="grid grid-cols-3 gap-3 text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground">
                   {stats.map(({ label, value }) => (
