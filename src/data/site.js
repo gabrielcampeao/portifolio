@@ -2,19 +2,19 @@ export const capabilities = [
   {
     title: 'Desenvolvimento Frontend',
     description:
-      'Construção de interfaces modernas com foco em performance, organização e experiência do usuário.',
+      'Monto interfaces com React e Next.js pensando em como a pessoa vai usar aquilo, não só em como fica bonito.',
     items: ['React / Next.js', 'Componentização', 'Integração com APIs'],
   },
   {
     title: 'Backend & APIs',
     description:
-      'Desenvolvimento de APIs e lógica de negócio com foco em organização, clareza e escalabilidade.',
+      'Escrevo APIs e regras de negócio buscando manter o código simples de entender daqui a seis meses.',
     items: ['Java + Spring Boot', 'PHP', 'MySQL'],
   },
   {
     title: 'Estrutura de Sistemas',
     description:
-      'Modelagem de dados e organização de aplicações completas, conectando front-end e back-end.',
+      'Desenho o banco de dados e a ligação entre front e back antes de sair codando, pra evitar retrabalho depois.',
     items: ['Arquitetura básica', 'CRUDs completos', 'Integração de sistemas'],
   },
 ]
