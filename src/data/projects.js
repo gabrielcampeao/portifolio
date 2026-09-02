@@ -13,9 +13,9 @@ export const projects = [
     githubURL: 'https://github.com/gabrielcampeao/Help',
     liveURL: 'https://help-sepia-ten.vercel.app/tickets',
     summary:
-      'Sistema full-stack de help desk para gerenciamento de chamados internos, usuários e fluxo de atendimento, com autenticação real, controle de acesso por perfil e deploy online.',
+      'Sistema de help desk pra gerenciar chamados internos, usuários e fluxo de atendimento, com autenticação de verdade, controle de acesso por perfil e no ar em produção.',
     description:
-      'Sistema de Help Desk full-stack construído em Next.js 15 com App Router, Prisma e PostgreSQL (Neon). Nasceu como reescrita de uma versão legada em PHP + MySQL, ganhando autenticação baseada em sessão com cookie HTTP-only e JWT, autorização por papéis (admin, técnico, comum), gerenciamento completo de chamados com histórico de alterações, dashboard analítico com Recharts e upload de avatares via Supabase Storage. Deploy contínuo na Vercel.',
+      'Reescrevi de uma versão antiga que eu tinha feito em PHP + MySQL, migrando tudo pra Next.js 15 com App Router, Prisma e PostgreSQL (Neon). No caminho, entrou autenticação por sessão com cookie HTTP-only e JWT, permissões por papel (admin, técnico, comum), histórico de alterações nos chamados, um dashboard com Recharts e upload de avatar via Supabase Storage. Deploy contínuo na Vercel.',
     details: [
       { label: 'Tipo', value: 'Sistema Web' },
       { label: 'Stack', value: 'Next.js 15 + React 19 + TypeScript + Prisma/PostgreSQL' },
@@ -38,9 +38,9 @@ export const projects = [
     githubURL: 'https://github.com/gabrielcampeao/site-gym',
     liveURL: 'https://site-gym-lilac.vercel.app/',
     summary:
-      'Site institucional completo de uma academia fitness fictícia, com busca de unidades por geolocalização, catálogo de equipamentos com tutoriais em vídeo e checkout com vouchers.',
+      'Site de uma academia fictícia, feito pra testar algumas ideias: busca de unidades por geolocalização, catálogo de equipamentos com vídeos e um checkout com cupons.',
     description:
-      'Site institucional construído em Next.js 14 (App Router) com React 18 e TypeScript, estilizado com Tailwind CSS v3 e paleta escura com acentos roxos. Inclui busca de unidades por geolocalização (cálculo de distância via fórmula de Haversine), catálogo de equipamentos com vídeos tutoriais em embed do YouTube, checkout em duas etapas com cupons de desconto e order bump, formulário de contato com envio real via Nodemailer/Gmail SMTP, e chat de suporte flutuante com respostas automáticas.',
+      'Construído em Next.js 14 (App Router) com React 18 e TypeScript, com Tailwind CSS v3 numa paleta escura com detalhes roxos. Tem busca de unidades por geolocalização (distância calculada via fórmula de Haversine), catálogo de equipamentos com vídeos do YouTube incorporados, checkout em duas etapas com cupons de desconto e order bump, formulário de contato que manda e-mail de verdade via Nodemailer/Gmail SMTP, e um chat de suporte flutuante com respostas automáticas.',
     details: [
       { label: 'Tipo', value: 'Site Institucional' },
       { label: 'Stack', value: 'Next.js 14 + React 18 + TypeScript + Tailwind CSS' },

@@ -1,40 +1,29 @@
-# Portfólio Gabriel Campeão
+# Portfólio — Gabriel Campeão
 
-> Desenvolvedor focado em criar aplicações web modernas, funcionais e bem estruturadas, com atenção à experiência do usuário e qualidade de código.
+Site pessoal onde reúno os projetos que venho construindo, um pouco da minha trajetória e as tecnologias com que trabalho no dia a dia.
 
----
+## Sobre
 
-## Sobre o projeto
+Comecei a programar durante o ensino médio técnico e desde então venho evoluindo através da faculdade, cursos e, principalmente, colocando a mão na massa em projetos próprios. Este portfólio existe pra mostrar isso: aplicações reais, com autenticação, banco de dados e deploy, não só telas bonitas.
 
-Este é meu portfólio pessoal, desenvolvido para apresentar meus projetos, evolução como desenvolvedor e habilidades técnicas.
+Prefiro aprender construindo. Por isso boa parte dos projetos aqui nasceu de uma necessidade real ou de uma curiosidade técnica que eu queria resolver — não de um tutorial que segui do começo ao fim.
 
-Aqui você vai encontrar aplicações reais construídas durante minha trajetória na faculdade, cursos e estudos independentes, sempre buscando aplicar boas práticas, organização e soluções eficientes.
+## Stack usada neste site
 
----
-
-## Tecnologias utilizadas
-
-- React 18
+- React 18 + Vite
 - React Router DOM
 - Tailwind CSS
-- Vite
-- Framer Motion (animações)
+- Framer Motion, pra animações
 - Lucide Icons
 
----
+## O que tem aqui
 
-## Funcionalidades
+- Tema claro/escuro (com persistência entre visitas)
+- Layout responsivo, testado em mobile
+- Navegação e transições sem recarregar a página
+- Dados de projetos e blog separados da UI, pra facilitar manutenção
 
-- Interface moderna e responsiva
-- Tema claro/escuro com persistência
-- Navegação fluida entre páginas
-- Animações suaves (UX refinada)
-- Estrutura componentizada e escalável
-- Organização de dados separada da UI
-
----
-
-## Estrutura do projeto
+## Estrutura
 
 ```
 src/
@@ -45,41 +34,23 @@ src/
 ├── hooks/          # Hooks personalizados
 └── assets/         # Imagens e arquivos estáticos
 ```
----
 
-## Em evolução
+## Rodando localmente
 
-Este projeto está em constante evolução. Algumas melhorias planejadas:
-
-- [ ] Integração com backend/API
-- [ ] Melhorias de performance
-- [ ] Novos projetos e estudos
-- [ ] Ajustar aba de projetos e colocar as devidas prévias em imagem / vídeo
-
----
-
-## Objetivo
-
-Mais do que um portfólio, este projeto representa minha evolução como desenvolvedor, desde os primeiros contatos com programação até a construção de aplicações mais completas.
-
----
-
-## Como rodar o projeto
-
+```bash
 npm install
 npm run dev
+```
 
----
+## Próximos passos
 
-## Observação
+Ainda tem coisa pra ajustar por aqui:
 
-Todo o conteúdo (projetos, textos e estrutura) foi desenvolvido por mim como parte do meu aprendizado e prática contínua em desenvolvimento web.
+- [ ] Ligar o formulário/blog a um backend próprio
+- [ ] Melhorar performance de carregamento das imagens
+- [ ] Adicionar novos projetos conforme eu for terminando
+- [ ] Trocar prints estáticos por vídeos curtos de demonstração
 
----
+## Uma nota
 
-## Filosofia de desenvolvimento
-
-Busco escrever código limpo, reutilizável e fácil de manter.
-Valorizo interfaces simples, bem pensadas e com boa experiência para o usuário.
-
-Mais do que apenas "fazer funcionar", meu objetivo é construir soluções bem estruturadas e escaláveis.
+Todo o código e conteúdo deste repositório fui eu quem escrevi, como parte do meu processo de aprender desenvolvimento web na prática. Se você chegou até aqui, fica à vontade pra dar uma olhada nos projetos ou me chamar — os contatos estão no site.
