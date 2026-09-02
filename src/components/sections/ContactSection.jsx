@@ -4,7 +4,6 @@ import { motion } from 'framer-motion'
 import { fadeUp, baseTransition, staggerContainer } from '../../motionConfig'
 
 import emailjs from '@emailjs/browser';
-import ReCAPTCHA from 'react-google-recaptcha';
 import { toast } from 'sonner'
 
 export function ContactSection() {
@@ -16,7 +15,6 @@ export function ContactSection() {
     })
 
   const [sent, setSent] = useState(false)
-  const [captcha, setCaptcha] = useState(null)
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
   const lastSent = localStorage.getItem('lastSent')
@@ -24,7 +22,6 @@ export function ContactSection() {
   const serviceId = import.meta.env.VITE_SERVICE_ID
   const templateId = import.meta.env.VITE_TEMPLATE_ID
   const publicKey = import.meta.env.VITE_PUBLIC_KEY
-  const recaptchaSiteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY
 
 
   const handleChange = (e) =>
@@ -52,12 +49,6 @@ export function ContactSection() {
     // validando mensagem
     if(form.project.length < 10) {
       toast.error("A mensagem deve conter pelo menos 10 caracteres.")
-      return
-    }
-
-    // Verificação de Captcha
-    if(!captcha) {
-      toast.warning("Confirme que você não é um robô")
       return
     }
 
@@ -203,15 +194,6 @@ export function ContactSection() {
                   placeholder="Compartilhe contexto, prazos e quaisquer links que possam ajudar."
                   required
                   className="w-full rounded-md border border-border/70 bg-background/80 px-3 py-2 text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring/50"
-                />
-              </div>
-
-              {/* CAPTCHA */}
-              <div className="sm:col-span-2">
-                <ReCAPTCHA
-                  sitekey={recaptchaSiteKey}
-                  onChange={(token) => setCaptcha(token)}
-                  onExpired={() => setCaptcha(null)}
                 />
               </div>
 
