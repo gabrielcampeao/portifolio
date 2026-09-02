@@ -2,7 +2,6 @@ import { projects } from '../data/projects'
 import { ProjectCard } from '../components/ui/ProjectCard'
 import { motion } from 'framer-motion'
 import { baseTransition, fadeUp, staggerContainer } from '../motionConfig'
-import { base } from 'framer-motion/client'
 import { DotPattern } from '../components/ui/dot-pattern'
 
 export function ProjectsPage() {
