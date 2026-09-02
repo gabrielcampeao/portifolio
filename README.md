@@ -60,7 +60,7 @@ Este projeto está em constante evolução. Algumas melhorias planejadas:
 
 ## Objetivo
 
-Mais do que um portfólio, este projeto representa minha evolução como desenvolvedor — desde os primeiros contatos com programação até a construção de aplicações mais completas.
+Mais do que um portfólio, este projeto representa minha evolução como desenvolvedor, desde os primeiros contatos com programação até a construção de aplicações mais completas.
 
 ---
 
