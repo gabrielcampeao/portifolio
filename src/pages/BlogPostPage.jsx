@@ -12,27 +12,6 @@ export function BlogPostPage() {
 
   const { title, date, category, readTime, content } = post
 
-  // Simple markdown-like renderer for the content
-  const renderContent = (text) => {
-    return text.split(/\n\s*\n/).map((block, i) => {
-      if (block.startsWith('## ')) {
-        return (
-          <h2
-            key={i}
-            className="mt-8 mb-3 text-sm font-medium uppercase tracking-[0.2em] text-foreground"
-          >
-            {block.replace('## ', '')}
-          </h2>
-        )
-      }
-      return (
-        <p key={i} className="mb-4 text-sm leading-relaxed text-muted-foreground">
-          {block}
-        </p>
-      )
-    })
-  }
-
   return (
     <main className="bg-background">
       {/* Header */}
