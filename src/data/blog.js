@@ -8,69 +8,21 @@ export const posts = [
       'Como reduzir excessos visuais pode tornar interfaces web mais claras, consistentes e fáceis de manter.',
     readTime: '5 min read',
     content: `
-Existe algo em comum entre interfaces que continuam funcionando bem com o tempo: **elas não dependem de exagero**.
+Reparei uma coisa nos projetos que fui revisitando depois de meses: as interfaces que continuavam fáceis de mexer eram sempre as mais enxutas. Menos cor, menos ruído, menos decisão visual tomada só pra preencher espaço vazio. Não é uma questão de gostar de minimalismo — é que uma interface mais contida acaba ficando mais fácil de entender e de evoluir depois.
 
-- Menos cor  
-- Menos ruído  
-- Menos decisões visuais feitas só para preencher espaço  
+## De onde vem o excesso
 
-Não se trata apenas de seguir uma estética minimalista. A ideia é **reduzir a complexidade** para que a interface fique mais clara, consistente e fácil de evoluir.
+Isso costuma começar de um jeito bem inocente. Um botão não chama atenção o suficiente, então ganha uma cor nova. Uma seção parece "sem vida", então entra mais contraste. Cada uma dessas escolhas, isoladamente, parece pequena, mas na prática ela vira uma regra nova pro projeto — mesmo que ninguém tenha decidido isso de propósito. Com o tempo essas regras se empilham, a interface fica mais difícil de manter e começam a aparecer inconsistências entre componentes que deveriam se parecer.
 
-## O problema da complexidade visual
+## Trabalhando com menos
 
-Durante o desenvolvimento, é normal recorrer a soluções visuais rápidas.
+Quando eu me obrigo a usar uma paleta mais restrita, as decisões ficam mais conscientes por necessidade. A hierarquia passa a depender mais da tipografia e do espaçamento do que de cor, e isso acaba deixando os componentes mais consistentes entre si — o que ajuda bastante na hora de reaproveitar peça de um lugar no outro sem retrabalho.
 
-Um botão não chama atenção o suficiente → ganha uma nova cor.  
-Uma seção parece sem vida → ganha mais contraste.
+Do lado do código, o reflexo é direto: menos variações de estilo significam menos exceções e menos remendo pra fazer um componente se encaixar num contexto que ele não foi pensado pra atender. No fim, contenção visual e organização de código andam mais juntas do que parece.
 
-O problema é que cada nova escolha acaba criando **uma regra nova**, mesmo que isso não esteja explícito.
+## O teste que uso
 
-Com o tempo:
-- decisões se acumulam  
-- a interface fica mais difícil de manter  
-- surgem inconsistências entre componentes  
-
-## Contenção como estratégia
-
-Trabalhar com uma paleta mais restrita obriga decisões mais conscientes.
-
-- A hierarquia passa a depender mais da **tipografia**
-- O espaçamento organiza melhor os blocos
-- Componentes ficam mais consistentes e reutilizáveis
-
-Esse tipo de abordagem reduz correções constantes e torna o sistema mais previsível.
-
-## O impacto no desenvolvimento
-
-Quando o design é mais contido, o desenvolvimento também tende a ficar mais simples.
-
-O código costuma ter:
-- menos variações  
-- menos exceções  
-- menos remendos  
-
-Os componentes ficam mais fáceis de:
-- reaproveitar  
-- entender  
-- manter  
-
-No fim, isso reduz tanto a complexidade **visual** quanto **estrutural**.
-
-## O que vale a pena manter
-
-Antes de adicionar uma nova cor ou variação, vale perguntar:
-
-> Isso resolve o problema ou só disfarça?
-
-Na maioria dos casos:
-- ajustar estrutura  
-- melhorar espaçamento  
-- refinar hierarquia  
-
-traz uma solução mais consistente.
-
-Interfaces que envelhecem bem não são as mais chamativas,  
-são as que continuam **claras, coerentes e fáceis de usar** com o tempo.
+Antes de criar uma cor ou variação nova, costumo parar e pensar se aquilo resolve o problema de verdade ou só disfarça ele por um tempo. Na maioria das vezes, ajustar a estrutura, revisar o espaçamento ou refinar a hierarquia resolve melhor do que adicionar mais uma opção visual. Interface que envelhece bem não é a mais chamativa — é a que continua clara e fácil de usar depois de meses sem ninguém mexer nela.
 `.trim(),
   },
   {
