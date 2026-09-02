@@ -17,7 +17,7 @@ export function ContactSection() {
   const [sent, setSent] = useState(false)
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-  const lastSent = localStorage.getItem('lastSent')
+  const COOLDOWN_MS = 60_000
 
   const serviceId = import.meta.env.VITE_SERVICE_ID
   const templateId = import.meta.env.VITE_TEMPLATE_ID
@@ -33,6 +33,13 @@ export function ContactSection() {
         
     // honeypot
     if(form.company) return
+
+    // cooldown anti-spam
+    const lastSent = localStorage.getItem('lastSent')
+    if(lastSent && Date.now() - Number(lastSent) < COOLDOWN_MS) {
+      toast.info("Aguarde um pouco antes de enviar outra mensagem.")
+      return
+    }
 
     // validação básica
     if(!form.name || !form.email || !form.project) {
