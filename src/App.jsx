@@ -10,7 +10,6 @@ import { NotFoundPage } from './pages/NotFoundPage'
 import { ScrollToTop } from './components/utils/ScrollToTop'
 import { ScrollToHash } from './components/utils/ScrollToHash'
 import { Toaster } from 'sonner'
-import { useEffect } from 'react'
 
 export default function App() {
   return (
